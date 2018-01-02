@@ -1,7 +1,7 @@
-package algos;
+package src.algos;
 
-import system.Bin;
-import system.ReadFile;
+import src.system.Bin;
+import src.system.ReadFile;
 
 import java.util.ArrayList;
 import java.util.List;

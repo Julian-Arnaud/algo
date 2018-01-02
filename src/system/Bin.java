@@ -1,4 +1,4 @@
-package system;
+package src.system;
 
 public class Bin {
     private int capacityMax;

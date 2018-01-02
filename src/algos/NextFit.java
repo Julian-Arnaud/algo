@@ -1,7 +1,8 @@
-package algos;
+package src.algos;
 
-import system.Bin;
-import system.ReadFile;
+import src.system.Chrono;
+import src.system.Bin;
+import src.system.ReadFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class NextFit {
     }
 
     private void operate(){
+        Chrono chrono = new Chrono();
+        chrono.Start();
         int pos = 0;
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()){
@@ -28,6 +31,8 @@ public class NextFit {
                 bins.get(pos).putObject(i);
             }
         }
+        chrono.Stop();
+        System.out.println("Temps en ms: " + chrono.getTime());
     }
 
     public int countNbBins(){

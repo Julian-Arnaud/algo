@@ -1,5 +1,5 @@
-import algos.NextFit;
-import system.ReadFile;
+import src.algos.NextFit;
+import src.system.ReadFile;
 
 import java.io.IOException;
 
