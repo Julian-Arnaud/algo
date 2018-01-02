@@ -1,6 +1,7 @@
 import algos.FirstFit;
 import algos.Fit;
 import algos.NextFit;
+import algos.WorstFit;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import system.ReadFile;
 
@@ -28,5 +29,13 @@ public class main {
         System.out.println(firstFit.countNbBins());
         System.out.println(firstFit1.countNbBins());
         System.out.println(firstFit2.countNbBins());
+
+        System.out.println();
+        Fit worstFit = new WorstFit(readFile);
+        Fit worstFit1 = new WorstFit(readFile1);
+        Fit worstFit2 = new WorstFit(readFile2);
+        System.out.println(worstFit.countNbBins());
+        System.out.println(worstFit1.countNbBins());
+        System.out.println(worstFit2.countNbBins());
     }
 }
