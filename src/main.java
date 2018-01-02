@@ -1,7 +1,6 @@
-import algos.FirstFit;
-import algos.Fit;
-import algos.NextFit;
-import algos.WorstFit;
+package src;
+
+import algos.*;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import system.ReadFile;
 
@@ -10,9 +9,9 @@ import java.io.IOException;
 public class main {
 
     public static void main(String[] args) throws IOException {
-        ReadFile readFile = new ReadFile("D:/Polytech/SI4/Complexité/Projet 2/algo/src/txt/exemple100.txt");
-        ReadFile readFile1 = new ReadFile("D:/Polytech/SI4/Complexité/Projet 2/algo/src/txt/exemple500.txt");
-        ReadFile readFile2 = new ReadFile("D:/Polytech/SI4/Complexité/Projet 2/algo/src/txt/exemple1000.txt");
+        ReadFile readFile = new ReadFile("/home/user/Bureau/exemple100.txt");
+        ReadFile readFile1 = new ReadFile("/home/user/Bureau/exemple500.txt");
+        ReadFile readFile2 = new ReadFile("/home/user/Bureau/exemple1000.txt");
 
 
         Fit nextFit = new NextFit(readFile);
@@ -37,5 +36,13 @@ public class main {
         System.out.println(worstFit.countNbBins());
         System.out.println(worstFit1.countNbBins());
         System.out.println(worstFit2.countNbBins());
+
+        System.out.println();
+        Fit bestFit = new BestFit(readFile);
+        Fit bestFit1 = new BestFit(readFile1);
+        Fit bestFit2 = new BestFit(readFile2);
+        System.out.println(bestFit.countNbBins());
+        System.out.println(bestFit1.countNbBins());
+        System.out.println(bestFit2.countNbBins());
     }
 }
