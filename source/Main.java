@@ -6,9 +6,9 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        ReadFile readFile = new ReadFile("ressources/exemple100.txt");
-        ReadFile readFile1 = new ReadFile("ressources/exemple500.txt");
-        ReadFile readFile2 = new ReadFile("ressources/exemple1000.txt");
+        ReadFile readFile = new ReadFile("exemples/exemple100.txt");
+        ReadFile readFile1 = new ReadFile("exemples/exemple500.txt");
+        ReadFile readFile2 = new ReadFile("exemples/exemple1000.txt");
 
 
         System.out.println();
