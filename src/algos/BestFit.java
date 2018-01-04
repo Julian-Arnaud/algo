@@ -13,7 +13,7 @@ public class BestFit extends algos.Fit{
 
     public void operate(){
         system.Chrono chrono = new system.Chrono();
-        chrono.Start();
+        chrono.start();
 
         // Pour savoir de combien de bin on va avoir besoin
         // Je pars donc sur une moyenne des valeurs à gérer
@@ -44,7 +44,7 @@ public class BestFit extends algos.Fit{
             }
         }
 
-        chrono.Stop();
+        chrono.stop();
         System.out.println("Temps en ms: " + chrono.getTime());
     }
 }

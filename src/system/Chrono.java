@@ -12,11 +12,11 @@ public class Chrono {
         time = 0;
     }
 
-    public void Start(){
+    public void start(){
         start = java.lang.System.currentTimeMillis();
     }
 
-    public void Stop(){
+    public void stop(){
         stop = java.lang.System.currentTimeMillis();
 
         time = stop - start;

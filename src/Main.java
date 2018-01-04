@@ -1,19 +1,35 @@
-package src;
-
 import algos.*;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import system.ReadFile;
 
 import java.io.IOException;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) throws IOException {
-        ReadFile readFile = new ReadFile("/home/user/Bureau/exemple100.txt");
-        ReadFile readFile1 = new ReadFile("/home/user/Bureau/exemple500.txt");
-        ReadFile readFile2 = new ReadFile("/home/user/Bureau/exemple1000.txt");
+        ReadFile readFile = new ReadFile("ressources/exemple100.txt");
+        ReadFile readFile1 = new ReadFile("ressources/exemple500.txt");
+        ReadFile readFile2 = new ReadFile("ressources/exemple1000.txt");
 
 
+        System.out.println();
+        Fit worstFit = new WorstFit(readFile);
+        Fit worstFit1 = new WorstFit(readFile1);
+        Fit worstFit2 = new WorstFit(readFile2);
+        System.out.println(worstFit.countNbBins());
+        System.out.println(worstFit1.countNbBins());
+        System.out.println(worstFit2.countNbBins());
+
+
+        System.out.println();
+        Fit almostWorstFit = new AlmostWorstFit(readFile);
+        Fit almostWorstFit1 = new AlmostWorstFit(readFile1);
+        Fit almostWorstFit2 = new AlmostWorstFit(readFile2);
+        System.out.println(almostWorstFit.countNbBins());
+        System.out.println(almostWorstFit1.countNbBins());
+        System.out.println(almostWorstFit2.countNbBins());
+
+
+        System.out.println();
         Fit nextFit = new NextFit(readFile);
         Fit nextFit1 = new NextFit(readFile1);
         Fit nextFit2 = new NextFit(readFile2);
@@ -28,14 +44,6 @@ public class main {
         System.out.println(firstFit.countNbBins());
         System.out.println(firstFit1.countNbBins());
         System.out.println(firstFit2.countNbBins());
-
-        System.out.println();
-        Fit worstFit = new WorstFit(readFile);
-        Fit worstFit1 = new WorstFit(readFile1);
-        Fit worstFit2 = new WorstFit(readFile2);
-        System.out.println(worstFit.countNbBins());
-        System.out.println(worstFit1.countNbBins());
-        System.out.println(worstFit2.countNbBins());
 
         System.out.println();
         Fit bestFit = new BestFit(readFile);

@@ -35,18 +35,19 @@ public class WorstFit extends Fit {
 
     private void operate(){
         Chrono chrono = new Chrono();
-        chrono.Start();
+        chrono.start();
 
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()) {
             Bin emptiest = getEmptiestBin();
-            if (getEmptiestBin().getRemainingSpace() < i)
+            if (emptiest.getRemainingSpace() < i)
             {
                 bins.add(new Bin(inFile.getBinSize()));
+                emptiest = getEmptiestBin();
             }
             emptiest.putObject(i);
         }
-        chrono.Stop();
+        chrono.stop();
         System.out.println("Temps en ms: " + chrono.getTime());
     }
 

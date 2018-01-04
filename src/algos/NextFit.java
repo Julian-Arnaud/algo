@@ -5,7 +5,6 @@ import system.Bin;
 import system.ReadFile;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NextFit extends Fit {
 
@@ -18,7 +17,7 @@ public class NextFit extends Fit {
 
     private void operate(){
         Chrono chrono = new Chrono();
-        chrono.Start();
+        chrono.start();
         int pos = 0;
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()){
@@ -29,7 +28,7 @@ public class NextFit extends Fit {
                 bins.get(pos).putObject(i);
             }
         }
-        chrono.Stop();
+        chrono.stop();
         System.out.println("Temps en ms: " + chrono.getTime());
     }
 
