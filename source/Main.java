@@ -1,7 +1,7 @@
 import algos.*;
 import system.ReadFile;
 
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
 
@@ -9,6 +9,7 @@ public class Main {
         ReadFile readFile = new ReadFile("exemples/exemple100.txt");
         ReadFile readFile1 = new ReadFile("exemples/exemple500.txt");
         ReadFile readFile2 = new ReadFile("exemples/exemple1000.txt");
+        ReadFile readFile3 = new ReadFile("exemples/monexemple.txt");
 
         System.out.println("Algorithme Worstfit");
         System.out.println("Avec exemple 100 : ");
@@ -20,6 +21,9 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit worstFit2 = new WorstFit(readFile2);
         System.out.println("Bins utilisés : " + worstFit2.countNbBins() + "\n");
+        System.out.println("Avec exemple 1000000 classé :");
+        Fit worstFit3 = new WorstFit(readFile3);
+        System.out.println("Bins utilisés : " + worstFit3.countNbBins() + "\n");
 
 
         System.out.println("Algorithme AlmostWorstFit");
@@ -32,6 +36,9 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit almostWorstFit2 = new AlmostWorstFit(readFile2);
         System.out.println("Bins utilisés : " + almostWorstFit2.countNbBins() + "\n");
+        System.out.println("Avec exemple 1000000 classé :");
+        Fit almostWorstFit3 = new AlmostWorstFit(readFile3);
+        System.out.println("Bins utilisés : " + almostWorstFit3.countNbBins() + "\n");
 
 
         System.out.println("Algorithme NextFit");
@@ -44,6 +51,9 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit nextFit2 = new NextFit(readFile2);
         System.out.println("Bins utilisés : " + nextFit2.countNbBins() + "\n");
+        System.out.println("Avec exemple 1000000 classé :");
+        Fit nextFit3 = new NextFit(readFile3);
+        System.out.println("Bins utilisés : " + nextFit3.countNbBins() + "\n");
 
         System.out.println("Algorithme FirstFit");
         System.out.println("Avec exemple 100 : ");
@@ -55,6 +65,9 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit firstFit2 = new FirstFit(readFile2);
         System.out.println("Bins utilisés : " + firstFit2.countNbBins() + "\n");
+        System.out.println("Avec exemple 1000000 classé :");
+        Fit firstFit3 = new FirstFit(readFile3);
+        System.out.println("Bins utilisés : " + firstFit3.countNbBins() + "\n");
 
         System.out.println("Algorithme BestFit");
         System.out.println("Avec exemple 100 : ");
@@ -66,5 +79,8 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit bestFit2 = new BestFit(readFile2);
         System.out.println("Bins utilisés : " + bestFit2.countNbBins() + "\n");
+        System.out.println("Avec exemple 1000000 classé :");
+        Fit bestFit3 = new BestFit(readFile3);
+        System.out.println("Bins utilisés : " + bestFit3.countNbBins() + "\n");
     }
 }

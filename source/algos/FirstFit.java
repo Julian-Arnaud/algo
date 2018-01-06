@@ -23,7 +23,7 @@ public class FirstFit extends Fit {
         for(Integer i : inFile.getListOfValues()){
             for (Bin b : bins)
             {
-                if (b.getRemainingSpace() > i)
+                if (b.getRemainingSpace() >= i)
                 {
                     b.putObject(i);
                     placed = true;

@@ -21,7 +21,7 @@ public class NextFit extends Fit {
         int pos = 0;
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()){
-            if(bins.get(pos).getRemainingSpace() > i) bins.get(pos).putObject(i);
+            if(bins.get(pos).getRemainingSpace() >= i) bins.get(pos).putObject(i);
             else{
                 bins.add(new Bin(inFile.getBinSize()));
                 pos++;
