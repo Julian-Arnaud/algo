@@ -11,21 +11,18 @@ import java.util.ArrayList;
  */
 public class WorstFit extends Fit {
 
-    public WorstFit(ReadFile file){
+    public WorstFit(ReadFile file) {
         bins = new ArrayList<>();
         inFile = file;
 
         this.operate();
     }
 
-    private Bin getEmptiestBin()
-    {
+    private Bin getEmptiestBin() {
         int id = 0;
         int min = bins.get(0).getRemainingSpace();
-        for (int i = 1; i < bins.size(); i++)
-        {
-            if (bins.get(i).getRemainingSpace() > min)
-            {
+        for (int i = 1; i < bins.size(); i++) {
+            if (bins.get(i).getRemainingSpace() > min) {
                 id = i;
                 min = bins.get(i).getRemainingSpace();
             }
@@ -33,15 +30,14 @@ public class WorstFit extends Fit {
         return bins.get(id);
     }
 
-    private void operate(){
+    private void operate() {
         Chrono chrono = new Chrono();
         chrono.start();
 
         bins.add(new Bin(inFile.getBinSize()));
-        for(Integer i : inFile.getListOfValues()) {
+        for (Integer i : inFile.getListOfValues()) {
             Bin emptiest = getEmptiestBin();
-            if (emptiest.getRemainingSpace() < i)
-            {
+            if (emptiest.getRemainingSpace() < i) {
                 bins.add(new Bin(inFile.getBinSize()));
                 emptiest = getEmptiestBin();
             }

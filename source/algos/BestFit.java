@@ -20,7 +20,7 @@ public class BestFit extends algos.Fit{
         int sum = 0;
         int cpt = 0;
         for(Integer i : inFile.getListOfValues()){
-            sum += inFile.getListOfValues().get(i);
+            sum += i;
             cpt++;
         }
         sum = sum / cpt;
