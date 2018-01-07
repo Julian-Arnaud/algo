@@ -17,7 +17,6 @@ public class BestFit extends algos.Fit{
 
         for(Integer i : inFile.getListOfValues()){
             Collections.sort(bins);
-            Collections.reverse(bins);
 
             boolean placed = false;
             for(int k = 0; k < bins.size() && !placed; ++k){
