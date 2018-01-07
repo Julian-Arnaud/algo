@@ -42,6 +42,11 @@ public abstract class Fit {
     public abstract void operate();
     public int countNbBins()
     {
-        return bins.size();
+
+        int cpt = 0;
+        for (Bin b: bins) {
+            if(b.getRemainingSpace() != b.getCapacityMax()) cpt++;
+        }
+        return cpt;
     }
 }
