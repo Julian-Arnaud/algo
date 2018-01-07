@@ -1,28 +1,40 @@
 package algos;
 
+import system.Bin;
+import system.ReadFile;
+
+import java.util.Collections;
+
 public class BestFit extends algos.Fit{
 
-    public BestFit(system.ReadFile file){
+    public BestFit(ReadFile file){
         super(file);
     }
 
     public void operate(){
-        for(int i = 0; i < 10000; ++i){
-            bins.add(new system.Bin(inFile.getBinSize()));
-        }
 
-        for(Integer j : inFile.getListOfValues()){
-            int bestPos = -1;
-            for(int k = 0; k < bins.size(); ++k){
-                if(bins.get(k).getRemainingSpace() >= j){
-                    if(bestPos == -1) bestPos = k;
-                    else if(bins.get(bestPos).getRemainingSpace() > bins.get(k).getRemainingSpace()) bestPos = k;
+        bins.add(new Bin(inFile.getBinSize()));
+
+        for(Integer i : inFile.getListOfValues()){
+            Collections.sort(bins);
+            Collections.reverse(bins);
+
+            boolean placed = false;
+            for(int k = 0; k < bins.size() && !placed; ++k){
+                if(bins.get(k).getRemainingSpace() >= i){
+                    bins.get(k).putObject(i);
+                    placed = true;
                 }
             }
 
-            if(bestPos != -1){
-                bins.get(bestPos).putObject(j);
+            if (!placed)
+            {
+                Bin newBin = new Bin(inFile.getBinSize());
+                newBin.putObject(i);
+                bins.add(newBin);
+
             }
+
         }
     }
 }
