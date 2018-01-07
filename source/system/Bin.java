@@ -13,10 +13,6 @@ public class Bin implements Comparable<Bin> {
         return capacityMax;
     }
 
-    public int getSpace() {
-        return space;
-    }
-
     public boolean putObject(int val) {
         if (space + val > capacityMax) return false;
         space += val;
