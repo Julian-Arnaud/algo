@@ -39,7 +39,7 @@ public class FirstFit extends Fit {
             placed = false;
         }
         chrono.stop();
-        System.out.println("Temps en ms: " + chrono.getTime());
+        System.out.println("Temps en ns: " + chrono.getTime());
     }
 
 }

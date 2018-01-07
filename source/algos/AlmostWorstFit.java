@@ -64,7 +64,7 @@ public class AlmostWorstFit extends Fit {
             secondEmptiest.putObject(i);
         }
         chrono.stop();
-        System.out.println("Temps en ms: " + chrono.getTime());
+        System.out.println("Temps en ns: " + chrono.getTime());
     }
 
 }

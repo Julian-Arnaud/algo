@@ -13,11 +13,11 @@ public class Chrono {
     }
 
     public void start(){
-        start = java.lang.System.currentTimeMillis();
+        start = System.nanoTime();
     }
 
     public void stop(){
-        stop = java.lang.System.currentTimeMillis();
+        stop = System.nanoTime();
 
         time = stop - start;
     }
