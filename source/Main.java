@@ -93,9 +93,9 @@ public class Main {
             System.out.println("Entrer la taille des bins :");
             Scanner scan = new Scanner(System.in);
             int binSize = scan.nextInt();
-            System.out.println("Entrer le nombre de valeurs voulus");
+            System.out.println("Entrer le nombre de valeurs voulues");
             int valueCount = scan.nextInt();
-            System.out.println("Entrer le nombre de simulation souhaité");
+            System.out.println("Entrer le nombre de simulations souhaitées");
             int simulationCount = scan.nextInt();
             for (int i = 0; i < simulationCount; i++) {
                 BufferedWriter bw = new BufferedWriter(new FileWriter(new File("exemples/random.txt")));
