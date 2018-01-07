@@ -21,7 +21,7 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit worstFit2 = new WorstFit(readFile2);
         System.out.println("Bins utilisés : " + worstFit2.countNbBins() + "\n");
-        System.out.println("Avec exemple 1000000 classé :");
+        System.out.println("Avec exemple 1000 classé :");
         Fit worstFit3 = new WorstFit(readFile3);
         System.out.println("Bins utilisés : " + worstFit3.countNbBins() + "\n");
 
@@ -36,7 +36,7 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit almostWorstFit2 = new AlmostWorstFit(readFile2);
         System.out.println("Bins utilisés : " + almostWorstFit2.countNbBins() + "\n");
-        System.out.println("Avec exemple 1000000 classé :");
+        System.out.println("Avec exemple 1000 classé :");
         Fit almostWorstFit3 = new AlmostWorstFit(readFile3);
         System.out.println("Bins utilisés : " + almostWorstFit3.countNbBins() + "\n");
 
@@ -51,7 +51,7 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit nextFit2 = new NextFit(readFile2);
         System.out.println("Bins utilisés : " + nextFit2.countNbBins() + "\n");
-        System.out.println("Avec exemple 1000000 classé :");
+        System.out.println("Avec exemple 1000 classé :");
         Fit nextFit3 = new NextFit(readFile3);
         System.out.println("Bins utilisés : " + nextFit3.countNbBins() + "\n");
 
@@ -65,7 +65,7 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit firstFit2 = new FirstFit(readFile2);
         System.out.println("Bins utilisés : " + firstFit2.countNbBins() + "\n");
-        System.out.println("Avec exemple 1000000 classé :");
+        System.out.println("Avec exemple 1000 classé :");
         Fit firstFit3 = new FirstFit(readFile3);
         System.out.println("Bins utilisés : " + firstFit3.countNbBins() + "\n");
 
@@ -79,7 +79,7 @@ public class Main {
         System.out.println("Avec exemple 1000 :");
         Fit bestFit2 = new BestFit(readFile2);
         System.out.println("Bins utilisés : " + bestFit2.countNbBins() + "\n");
-        System.out.println("Avec exemple 1000000 classé :");
+        System.out.println("Avec exemple 1000 classé :");
         Fit bestFit3 = new BestFit(readFile3);
         System.out.println("Bins utilisés : " + bestFit3.countNbBins() + "\n");
     }
