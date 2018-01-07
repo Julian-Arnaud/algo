@@ -15,7 +15,6 @@ public class BestFit extends algos.Fit{
         system.Chrono chrono = new system.Chrono();
         chrono.start();
 
-
         // On surdimensionne expres
         for(int i = 0; i < 10000; ++i){
             bins.add(new system.Bin(inFile.getBinSize()));
