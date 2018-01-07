@@ -15,17 +15,9 @@ public class BestFit extends algos.Fit{
         system.Chrono chrono = new system.Chrono();
         chrono.start();
 
-        // Pour savoir de combien de bin on va avoir besoin
-        // Je pars donc sur une moyenne des valeurs à gérer
-        int sum = 0;
-        int cpt = 0;
-        for(Integer i : inFile.getListOfValues()){
-            sum += inFile.getListOfValues().get(i);
-            cpt++;
-        }
-        sum = sum / cpt;
 
-        for(int i = 0; i < sum; ++i){
+        // On surdimensionne expres
+        for(int i = 0; i < 10000; ++i){
             bins.add(new system.Bin(inFile.getBinSize()));
         }
         //-------------//
