@@ -1,23 +1,15 @@
 package algos;
 
 import system.Bin;
-import system.Chrono;
 import system.ReadFile;
-
-import java.util.ArrayList;
 
 public class FirstFit extends Fit {
 
     public FirstFit(ReadFile file){
-        bins = new ArrayList<>();
-        inFile = file;
-
-        this.operate();
+        super(file);
     }
 
-    private void operate(){
-        Chrono chrono = new Chrono();
-        chrono.start();
+    public void operate(){
         boolean placed = false;
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()){
@@ -38,8 +30,6 @@ public class FirstFit extends Fit {
             }
             placed = false;
         }
-        chrono.stop();
-        System.out.println("Temps en ns: " + chrono.getTime());
     }
 
 }

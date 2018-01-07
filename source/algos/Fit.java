@@ -1,8 +1,10 @@
 package algos;
 
 import system.Bin;
+import system.Chrono;
 import system.ReadFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,13 +12,34 @@ import java.util.List;
  */
 public abstract class Fit {
 
-    protected List<Bin> bins;
-    protected ReadFile inFile;
+    List<Bin> bins;
+    ReadFile inFile;
+    private double time;
 
-    private void operate()
-    {
-
+    Fit(ReadFile file){
+        bins = new ArrayList<>();
+        inFile = file;
+        operateMain();
     }
+
+    public double getTime(){
+        return time;
+    }
+
+    private void operateMain(){
+        Chrono chrono = new Chrono();
+        chrono.start();
+        operate();
+        chrono.stop();
+        time = chrono.getTime();
+    }
+
+    public void print(){
+        System.out.println("Nombre de bins : " + countNbBins());
+        System.out.println("Temps en ns : " + getTime() + "\n");
+    }
+
+    public abstract void operate();
     public int countNbBins()
     {
         return bins.size();

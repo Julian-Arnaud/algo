@@ -1,20 +1,12 @@
 package algos;
 
-import java.util.ArrayList;
-
 public class BestFit extends algos.Fit{
 
     public BestFit(system.ReadFile file){
-        bins = new ArrayList<>();
-        inFile = file;
-
-        this.operate();
+        super(file);
     }
 
     public void operate(){
-        system.Chrono chrono = new system.Chrono();
-        chrono.start();
-
         // Pour savoir de combien de bin on va avoir besoin
         // Je pars donc sur une moyenne des valeurs à gérer
         int sum = 0;
@@ -43,8 +35,5 @@ public class BestFit extends algos.Fit{
                 bins.get(bestPos).putObject(j);
             }
         }
-
-        chrono.stop();
-        System.out.println("Temps en ns: " + chrono.getTime());
     }
 }

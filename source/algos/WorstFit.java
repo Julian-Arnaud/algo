@@ -1,10 +1,7 @@
 package algos;
 
 import system.Bin;
-import system.Chrono;
 import system.ReadFile;
-
-import java.util.ArrayList;
 
 /**
  * Created by Renaud on 02/01/2018.
@@ -12,10 +9,7 @@ import java.util.ArrayList;
 public class WorstFit extends Fit {
 
     public WorstFit(ReadFile file) {
-        bins = new ArrayList<>();
-        inFile = file;
-
-        this.operate();
+        super(file);
     }
 
     private Bin getEmptiestBin() {
@@ -30,10 +24,7 @@ public class WorstFit extends Fit {
         return bins.get(id);
     }
 
-    private void operate() {
-        Chrono chrono = new Chrono();
-        chrono.start();
-
+    public void operate() {
         bins.add(new Bin(inFile.getBinSize()));
         for (Integer i : inFile.getListOfValues()) {
             Bin emptiest = getEmptiestBin();
@@ -43,8 +34,6 @@ public class WorstFit extends Fit {
             }
             emptiest.putObject(i);
         }
-        chrono.stop();
-        System.out.println("Temps en ns: " + chrono.getTime());
     }
 
 }

@@ -1,23 +1,15 @@
 package algos;
 
-import system.Chrono;
 import system.Bin;
 import system.ReadFile;
-
-import java.util.ArrayList;
 
 public class NextFit extends Fit {
 
     public NextFit(ReadFile file){
-        bins = new ArrayList<>();
-        inFile = file;
-
-        this.operate();
+        super(file);
     }
 
-    private void operate(){
-        Chrono chrono = new Chrono();
-        chrono.start();
+    public void operate(){
         int pos = 0;
         bins.add(new Bin(inFile.getBinSize()));
         for(Integer i : inFile.getListOfValues()){
@@ -28,8 +20,6 @@ public class NextFit extends Fit {
                 bins.get(pos).putObject(i);
             }
         }
-        chrono.stop();
-        System.out.println("Temps en ns: " + chrono.getTime());
     }
 
 }

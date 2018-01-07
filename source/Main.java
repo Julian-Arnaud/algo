@@ -19,75 +19,77 @@ public class Main {
             System.out.println("Algorithme Worstfit");
             System.out.println("Avec exemple 100 : ");
             Fit worstFit = new WorstFit(readFile);
-            System.out.println("Bins utilisés : " + worstFit.countNbBins() + "\n");
+            worstFit.print();
             System.out.println("Avec exemple 500 :");
             Fit worstFit1 = new WorstFit(readFile1);
-            System.out.println("Bins utilisés : " + worstFit1.countNbBins() + "\n");
+            worstFit1.print();
             System.out.println("Avec exemple 1000 :");
             Fit worstFit2 = new WorstFit(readFile2);
-            System.out.println("Bins utilisés : " + worstFit2.countNbBins() + "\n");
+            worstFit2.print();
             System.out.println("Avec exemple 1000000 classé :");
             Fit worstFit3 = new WorstFit(readFile3);
-            System.out.println("Bins utilisés : " + worstFit3.countNbBins() + "\n");
+            worstFit3.print();
 
 
             System.out.println("Algorithme AlmostWorstFit");
             System.out.println("Avec exemple 100 : ");
             Fit almostWorstFit = new AlmostWorstFit(readFile);
-            System.out.println("Bins utilisés : " + almostWorstFit.countNbBins() + "\n");
+            almostWorstFit.print();
             System.out.println("Avec exemple 500 :");
             Fit almostWorstFit1 = new AlmostWorstFit(readFile1);
-            System.out.println("Bins utilisés : " + almostWorstFit1.countNbBins() + "\n");
+            almostWorstFit1.print();
             System.out.println("Avec exemple 1000 :");
             Fit almostWorstFit2 = new AlmostWorstFit(readFile2);
-            System.out.println("Bins utilisés : " + almostWorstFit2.countNbBins() + "\n");
+            almostWorstFit2.print();
             System.out.println("Avec exemple 1000000 classé :");
             Fit almostWorstFit3 = new AlmostWorstFit(readFile3);
-            System.out.println("Bins utilisés : " + almostWorstFit3.countNbBins() + "\n");
+            almostWorstFit3.print();
 
 
             System.out.println("Algorithme NextFit");
             System.out.println("Avec exemple 100 : ");
             Fit nextFit = new NextFit(readFile);
-            System.out.println("Bins utilisés : " + nextFit.countNbBins() + "\n");
+            nextFit.print();
             System.out.println("Avec exemple 500 :");
             Fit nextFit1 = new NextFit(readFile1);
-            System.out.println("Bins utilisés : " + nextFit1.countNbBins() + "\n");
+            nextFit1.print();
             System.out.println("Avec exemple 1000 :");
             Fit nextFit2 = new NextFit(readFile2);
-            System.out.println("Bins utilisés : " + nextFit2.countNbBins() + "\n");
+            nextFit2.print();
             System.out.println("Avec exemple 1000000 classé :");
             Fit nextFit3 = new NextFit(readFile3);
-            System.out.println("Bins utilisés : " + nextFit3.countNbBins() + "\n");
+            nextFit3.print();
 
             System.out.println("Algorithme FirstFit");
             System.out.println("Avec exemple 100 : ");
             Fit firstFit = new FirstFit(readFile);
-            System.out.println("Bins utilisés : " + firstFit.countNbBins() + "\n");
+            firstFit.print();
             System.out.println("Avec exemple 500 :");
             Fit firstFit1 = new FirstFit(readFile1);
-            System.out.println("Bins utilisés : " + firstFit1.countNbBins() + "\n");
+            firstFit1.print();
             System.out.println("Avec exemple 1000 :");
             Fit firstFit2 = new FirstFit(readFile2);
-            System.out.println("Bins utilisés : " + firstFit2.countNbBins() + "\n");
+            firstFit2.print();
             System.out.println("Avec exemple 1000000 classé :");
             Fit firstFit3 = new FirstFit(readFile3);
-            System.out.println("Bins utilisés : " + firstFit3.countNbBins() + "\n");
+            firstFit3.print();
 
             System.out.println("Algorithme BestFit");
             System.out.println("Avec exemple 100 : ");
             Fit bestFit = new BestFit(readFile);
-            System.out.println("Bins utilisés : " + bestFit.countNbBins() + "\n");
+            bestFit.print();
             System.out.println("Avec exemple 500 :");
             Fit bestFit1 = new BestFit(readFile1);
-            System.out.println("Bins utilisés : " + bestFit1.countNbBins() + "\n");
+            bestFit1.print();
             System.out.println("Avec exemple 1000 :");
             Fit bestFit2 = new BestFit(readFile2);
-            System.out.println("Bins utilisés : " + bestFit2.countNbBins() + "\n");
+            bestFit2.print();
             System.out.println("Avec exemple 1000000 classé :");
             Fit bestFit3 = new BestFit(readFile3);
-            System.out.println("Bins utilisés : " + bestFit3.countNbBins() + "\n");
+            bestFit3.print();
         } else {
+            double worstbins = 0, almostworstbins = 0, nextbins = 0, firstbins = 0, bestbins = 0;
+            double worsttime = 0, almostworsttime = 0, nexttime = 0, firsttime = 0, besttime = 0;
             System.out.println("Entrer la taille des bins :");
             Scanner scan = new Scanner(System.in);
             int binSize = scan.nextInt();
@@ -96,7 +98,6 @@ public class Main {
             System.out.println("Entrer le nombre de simulation souhaité");
             int simulationCount = scan.nextInt();
             for (int i = 0; i < simulationCount; i++) {
-                System.out.println("Simulation numéro : " + i);
                 BufferedWriter bw = new BufferedWriter(new FileWriter(new File("exemples/random.txt")));
                 bw.write("Taille bin\n");
                 bw.write("" + binSize + "\nObjets\n");
@@ -108,22 +109,42 @@ public class Main {
                 bw.write(rand + ".");
                 bw.close();
                 ReadFile readFile = new ReadFile("exemples/random.txt");
-                System.out.println("Algorithme worstfit : ");
                 Fit worstFit = new WorstFit(readFile);
-                System.out.println("Bins utilisés : " + worstFit.countNbBins() + "\n");
-                System.out.println("Algorithme almostworstfit : ");
+                worstbins += worstFit.countNbBins();
+                worsttime += worstFit.getTime();
                 Fit almostWorstFit = new AlmostWorstFit(readFile);
-                System.out.println("Bins utilisés : " + almostWorstFit.countNbBins() + "\n");
-                System.out.println("Algorithme nextfit: ");
+                almostworstbins += almostWorstFit.countNbBins();
+                almostworsttime += almostWorstFit.getTime();
                 Fit nextFit = new NextFit(readFile);
-                System.out.println("Bins utilisés : " + nextFit.countNbBins() + "\n");
-                System.out.println("Algorithme firstfit: ");
+                nextbins += nextFit.countNbBins();
+                nexttime += nextFit.getTime();
                 Fit firstFit = new FirstFit(readFile);
-                System.out.println("Bins utilisés : " + firstFit.countNbBins() + "\n");
-                System.out.println("Algorithme bestfit: ");
+                firstbins += firstFit.countNbBins();
+                firsttime += firstFit.getTime();
                 Fit bestFit = new BestFit(readFile);
-                System.out.println("Bins utilisés : " + bestFit.countNbBins() + "\n");
+                bestbins += bestFit.countNbBins();
+                besttime += bestFit.getTime();
             }
+            System.out.println("WorstFit en moyenne : ");
+            System.out.println("Temps en ns : " + worsttime / simulationCount);
+            System.out.println("Nombre de bins : " + worstbins / simulationCount + "\n");
+
+            System.out.println("AlmostWorstFit en moyenne : ");
+            System.out.println("Temps en ns : " + almostworsttime / simulationCount);
+            System.out.println("Nombre de bins : " + almostworstbins / simulationCount + "\n");
+
+            System.out.println("NextFit en moyenne : ");
+            System.out.println("Temps en ns : " + nexttime / simulationCount);
+            System.out.println("Nombre de bins : " + nextbins / simulationCount + "\n");
+
+            System.out.println("FirstFit en moyenne : ");
+            System.out.println("Temps en ns : " + firsttime / simulationCount);
+            System.out.println("Nombre de bins : " + firstbins / simulationCount + "\n");
+
+            System.out.println("BestFit en moyenne : ");
+            System.out.println("Temps en ns : " + besttime / simulationCount);
+            System.out.println("Nombre de bins : " + bestbins / simulationCount);
+
         }
     }
 }
